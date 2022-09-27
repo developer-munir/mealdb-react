@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import Body from './components/Body/Body';
+import Header from './components/Header/Header';
+import  AOS  from "aos";
+import "aos/dist/aos.css";
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  },[])
+  const [searchText,setSearchText] = useState('');
+  const search = (e) => {
+    if (e.target.value) {
+      setSearchText(e.target.value);
+    } 
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header search={search}></Header>
+      <Body searchText={searchText}></Body>
     </div>
   );
 }
