@@ -3,10 +3,7 @@ import React from 'react';
 const Card = (props) => {
     // console.log(props?.food)
     // const { strMealThumb } = food;
-    const {
-      strMealThumb,
-      strMeal
-    } = props?.food;
+    const { strMealThumb, strMeal, idMeal } = props?.food;
     const { handleBookMark } = props;
     return (
       <div data-aos="flip-left">
@@ -23,7 +20,7 @@ const Card = (props) => {
             <div className="card-actions justify-end">
               <div
                 className="btn btn-outline"
-                onClick={() => handleBookMark(strMeal)}
+                onClick={() => handleBookMark(strMeal,idMeal)}
               >
                 Bookmark
               </div>

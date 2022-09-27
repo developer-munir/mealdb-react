@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-const Header = ({search}) => {
+const Header = ({ search }) => {
     return (
       <div className="block mx-auto">
         <div className="navbar bg-slate-600 ">
@@ -50,6 +50,7 @@ const Header = ({search}) => {
                     type="text"
                     placeholder="Search"
                     className="input input-bordered w-3/4"
+                    onChange={search}
                   />
                 </div>
               </ul>

@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Selected = ({ bookmark }) => {
-  // console.log(bookmark);
+const Selected = ({ bookmark, mealid }) => {
   return (
     <div>
       <h1>I am selected items</h1>
       <ul>
         {bookmark.map((info) => (
-          <li>{info.strMeal}</li>
+          <li key={info.idMeal}>{info.strMeal}</li>
         ))}
       </ul>
     </div>
